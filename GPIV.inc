@@ -48,9 +48,15 @@ public OnGameModeInit() {
 	return 1;
 }
 
+public OnPlayerConnect(playerid) {
+
+	g_PlayerVehicleID[playerid] = INVALID_VEHICLE_ID;
+	return 1;
+}
+
 public OnPlayerStateChange(playerid, newstate, oldstate) {
 
-	if(newstate == PLAYER_STATE_DRIVER || newstate == PLAYER_STATE_PASSENGER) {
+	if((newstate == PLAYER_STATE_DRIVER || newstate == PLAYER_STATE_PASSENGER) && g_PlayerVehicleID[playerid] == INVALID_VEHICLE_ID) {
 	
 	    new
 	        temp_VehicleID = GetPlayerVehicleID(playerid);
