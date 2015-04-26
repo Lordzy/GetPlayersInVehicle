@@ -71,6 +71,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate) {
 		    if(g_VehicleSeatData[g_PlayerVehicleID[playerid]][e_VehiclePlayers][i] == playerid) {
 		    
 		        g_VehicleSeatData[g_PlayerVehicleID[playerid]][e_VehiclePlayers][i] = INVALID_PLAYER_ID;
+		        g_PlayerVehicleID[playerid] = INVALID_VEHICLE_ID;
 			}
 		}
 	}
